@@ -14,6 +14,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$font: 16;
+$screen: 375;
+@function px2rem($n) {
+     @return #{$n/($screen*$font/320)}rem
+}
+
 .hello {
     width: 100%;
     height: 100vh;
@@ -29,7 +35,7 @@ export default {
     .run {
         width: 70%;
         display: block;
-        font-size: 1.5em;
+        font-size: px2rem(30);
         position: fixed;
         bottom: 21vh;
         left: 15%;
