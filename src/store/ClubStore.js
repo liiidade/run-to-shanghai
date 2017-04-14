@@ -52,7 +52,7 @@ const mutations = {
   DriveUpBFee(state, bData) {
     const {id, newFee} = bData;
     state.cars = state.car.reduce((tempCars, car) => {
-      if (car.id === id)
+      if (car.id === id && newFee > car.fee) 
         car.fee = newFee;
       return tempCars.cancat(car)
     }, state.cars)

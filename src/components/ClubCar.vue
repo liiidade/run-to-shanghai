@@ -19,6 +19,7 @@
     </div>
   </section>
   <MapFootLink/>
+  <PopUp/>
 </div>
 </template>
 
@@ -30,6 +31,7 @@ import {
 
 import MapFootLink from './MapFootLink'
 import ConerStatus from './common/ConerStatus'
+import PopUp from './common/PopUp'
 
 export default {
   name: 'ClubCar',
@@ -59,12 +61,41 @@ export default {
       this.$router.back()
     },
     fixIt() {
-
+      const {
+        money,
+        hp,
+        hungry
+      } = this.broStatus;
+      const {
+        fee,
+        effect
+      } = this.currentCarDetails;
+      const leaveMoney = money - fee;
+      if (leaveMoney < 0) {
+        const popUpInfo = {
+          show: true,
+          title: '老哥，还差' + (~leaveMoney + 1) + '，总不能修霸王车吧～',
+          tips: '老哥可以进场打工，过三关搞点路子'
+        }
+        this.$store.commit('Show', popUpInfo)
+      } else {
+        const newBroSta = {
+          money: leaveMoney,
+          hp: Object.assign({}, hp, {
+            total: hp.total + effect.hp
+          }),
+          hungry: Object.assign({}, hungry, {
+            current: hungry.current - effect.hungry
+          })
+        }
+        this.$store.commit('UpdateBro', newBroSta)
+      }
     }
   },
   components: {
     MapFootLink,
-    ConerStatus
+    ConerStatus,
+    PopUp
   }
 }
 </script>

@@ -2,7 +2,7 @@ import Vue from 'vue';
 
 const BRO_STATUS = {
   name: '聚宝',
-  money: 500,
+  money: 1500,
   hp: {
     total: 120,
     current: 40
@@ -19,7 +19,11 @@ const state = {
   broStatus: BRO_STATUS
 }
 
-const mutations = {}
+const mutations = {
+  UpdateBro(state, data) {
+    Object.assign(state.broStatus, data);
+  }
+}
 
 export default {
   state,

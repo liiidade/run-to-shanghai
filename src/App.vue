@@ -12,5 +12,4 @@ export default {
 
 <style lang="scss">
 @import "./assets/scss/base.scss";
-@import "./assets/scss/rem.scss";
 </style>

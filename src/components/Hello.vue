@@ -14,12 +14,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$font: 16;
-$screen: 375;
-@function px2rem($n) {
-     @return #{$n/($screen*$font/320)}rem
-}
-
+@import "../assets/scss/rem.scss";
 .hello {
     width: 100%;
     height: 100vh;

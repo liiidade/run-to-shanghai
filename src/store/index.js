@@ -5,6 +5,7 @@ import BroStore from './BroStore';
 import RuleStore from './RuleStore';
 import ActivityStore from './ActivityStore';
 import ClubStore from './ClubStore';
+import PopUpStore from './PopUpStore';
 
 Vue.use(Vuex)
 
@@ -13,7 +14,8 @@ const store = new Vuex.Store({
     RuleStore,
     BroStore,
     ActivityStore,
-    ClubStore
+    ClubStore,
+    PopUpStore
   }
 })
 
