@@ -29,6 +29,8 @@ import {
   mapState
 } from 'vuex';
 
+import Vue from 'vue';
+
 import MapFootLink from './MapFootLink'
 import ConerStatus from './common/ConerStatus'
 import PopUp from './common/PopUp'
@@ -88,7 +90,15 @@ export default {
             current: hungry.current - effect.hungry
           })
         }
-        this.$store.commit('UpdateBro', newBroSta)
+        this.$store.commit('UpdateBro', newBroSta);
+        Vue.nextTick(() => {
+          const popUpInfo = {
+            show: true,
+            title: '鸡儿梆硬！',
+            tips: '修了一发，hp增加' + effect.hp + '，饱食度减少' + effect.hungry+'。具体信息可以参照左上角～'
+          };
+          this.$store.commit('Show', popUpInfo)
+        });
       }
     }
   },
