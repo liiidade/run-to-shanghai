@@ -21,7 +21,6 @@ const CLUB = {
   name: '会所修车',
   url: '/club',
   tips: '逛个会所修个车，还不是美滋滋～',
-  failText: '老哥没这么多钱还想修霸王车不成～',
   signImg: require('../assets/img/fix_car.jpg'),
   imgUrl: require('../assets/img/car_club.jpg'),
   positions: [

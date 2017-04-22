@@ -10,7 +10,7 @@ const CLUB_CAR = [
       hp: 10,
       hungry: -20
     },
-    img: require('../assets/img/naida.jpeg')
+    img: require('../assets/img/naida.png')
   }, {
     id: '546L5qKF5b+S',
     name: '王梅忒',
@@ -20,7 +20,7 @@ const CLUB_CAR = [
       hp: 7,
       hungry: -20
     },
-    img: require('../assets/img/changtui.jpeg')
+    img: require('../assets/img/changtui.png')
   }, {
     id: '572X6I6J',
     name: '罗莉',
@@ -30,7 +30,7 @@ const CLUB_CAR = [
       hp: 4,
       hungry: -20
     },
-    img: require('../assets/img/luoli.jpeg')
+    img: require('../assets/img/luoli.png')
   }, {
     id: '572X6I6J',
     name: '童鞠茹',
@@ -40,7 +40,7 @@ const CLUB_CAR = [
       hp: 12,
       hungry: -20
     },
-    img: require('../assets/img/tongju.jpeg')
+    img: require('../assets/img/tongju.png')
   }
 ]
 
@@ -52,7 +52,7 @@ const mutations = {
   DriveUpBFee(state, bData) {
     const {id, newFee} = bData;
     state.cars = state.car.reduce((tempCars, car) => {
-      if (car.id === id && newFee > car.fee) 
+      if (car.id === id && newFee > car.fee)
         car.fee = newFee;
       return tempCars.cancat(car)
     }, state.cars)
