@@ -9,13 +9,13 @@
     <p class="intro">{{currentCarDetails.intro}}</p>
     <P class="effect">生命最大值+{{currentCarDetails.effect.hp}}，饱食度{{currentCarDetails.effect.hungry}}</p>
     <div class="cut-car">
-      <button @click="cutCar(-1)" class="left"><</button>
+      <button @click="cutCar(-1)" class="left b-block"><</button>
       <p class="fee">¥ {{currentCarDetails.fee}}</p>
-      <button @click="cutCar(1)" class="right">></button>
+      <button @click="cutCar(1)" class="right b-block">></button>
     </div>
     <div class="actions">
-      <button @click="fixIt" class="left t-shadow">修</button>
-      <button @click="cancel" class="right t-shadow">算了</button>
+      <button @click="fixIt" class="left b-block t-shadow">修</button>
+      <button @click="cancel" class="right b-block  t-shadow">算了</button>
     </div>
   </section>
   <MapFootLink/>
@@ -148,11 +148,6 @@ export default {
     .left,
     .right {
         font-size: 1.3em;
-        background-color: rgba(48, 109, 173, 0.6);
-        border: 1px solid #21476f;
-        color: #FFFFFF;
-        border: 1px solid rgba(48, 109, 173, 0.6);
-        border-radius: 4px;
     }
     .cut-car {
         margin: 0 auto;
