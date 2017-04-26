@@ -4,9 +4,15 @@
   <div class="select-tiger frame-box">
     <button class="left btn"><img src="../assets/img/left.png"></button>
     <button class="right btn"><img src="../assets/img/right.png"></button>
-    <button class="up btn"><img src="../assets/img/fold.png"></button>
-    <button class="down btn"><img src="../assets/img/unfold.png"></button>
-    <div class="imgs"></div>
+    <div class="choose-block">
+      <img class="expect" />
+      <div class="bet t-shadow">
+        <button class="up btn"><img src="../assets/img/fold.png"></button>
+        <p class="num">0.0</p>
+        <p class="tips">加倍</p>
+        <button class="down btn"><img src="../assets/img/unfold.png"></button>
+      </div>
+    </div>
     <div class="actions">
       <button class="left b-block t-shadow">上</button>
       <button class="b-block t-shadow">撤</button>
@@ -43,33 +49,56 @@ export default {
         left: px2rem(38);
         top: 50vh;
         .btn {
-            position: absolute;
             background-color: rgba(255, 255, 255, 0);
             padding: 0;
             &.left {
-                top: px2rem(70);
+                position: absolute;
+                top: px2rem(50);
                 left: px2rem(-10);
             }
             &.right {
-                top: px2rem(70);
+                position: absolute;
+                top: px2rem(50);
                 right: px2rem(-10);
-            }
-            &.up {
-                top: px2rem(-10);
-                left: px2rem(130);
-            }
-            &.down {
-                top: px2rem(150);
-                left: px2rem(130);
             }
             img {
                 width: px2rem(40);
             }
         }
-        .imgs {
-            padding: px2rem(20);
+        .choose-block {
+            padding: 0 px2rem(20);
             width: px2rem(260);
             height: px2rem(140);
+            > * {
+                vertical-align: middle;
+                display: inline-block;
+            }
+            .expect {
+                margin-left: px2rem(10);
+                padding: px2rem(10);
+                height: px2rem(120);
+                width: px2rem(120);
+            }
+            .bet {
+                position: relative;
+                height: px2rem(140);
+                width: px2rem(100);
+                text-align: center;
+                color: #FFFFFF;
+                .num {
+                    font-size: px2rem(40);
+                }
+                .tips {
+                    font-size: px2rem(16);
+                    margin-top: px2rem(6);
+                }
+                .up {
+                    margin-top: px2rem(-10);
+                }
+                .down {
+                    margin-bottom: px2rem(-10);
+                }
+            }
         }
         .actions {
             margin: px2rem(15) 0;
